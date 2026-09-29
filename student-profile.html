@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your submitted student application profile and official Digital Student ID Card.">
+  <title>Student Profile &amp; ID Card | Student Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand" id="brandLogo">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">Apex Institute of Technology</div>
+          <div class="brand-subtitle">Student Admission &amp; Enrollment Portal</div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link" id="navFormLink">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          Admission Form
+        </a>
+        <a href="student-profile.html" class="nav-link active" id="navProfileLink">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+            <circle cx="9" cy="10" r="2"></circle>
+            <line x1="15" y1="8" x2="17" y2="8"></line>
+            <line x1="15" y1="12" x2="17" y2="12"></line>
+            <line x1="7" y1="16" x2="17" y2="16"></line>
+          </svg>
+          Student ID &amp; Profile
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- Page Header & Steps -->
+    <section class="page-header">
+      <span class="header-badge" style="background: var(--accent-light); color: var(--accent);">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        Admission Confirmed &bull; Academic Year 2026-2027
+      </span>
+      <h1 class="page-title">Student Profile &amp; Digital Identity</h1>
+      <p class="page-description">
+        Your registration details have been verified and recorded. You can view your Digital Student ID Card and print the complete application summary below.
+      </p>
+    </section>
+
+    <!-- Progress Steps -->
+    <div class="steps-container" aria-label="Registration Progress">
+      <div class="step-item completed">
+        <div class="step-number">&#10003;</div>
+        <span>Application Submitted</span>
+      </div>
+      <div class="step-divider"></div>
+      <div class="step-item active">
+        <div class="step-number">2</div>
+        <span>ID Card &amp; Confirmation</span>
+      </div>
+    </div>
+
+    <!-- Quick Action Bar -->
+    <div class="actions-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+      <a href="index.html" class="btn btn-secondary" id="backToFormBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        Back to Form / Edit Info
+      </a>
+
+      <div style="display: flex; gap: 0.75rem;">
+        <button type="button" class="btn btn-secondary" id="copyIdBtn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy Student ID
+        </button>
+
+        <button type="button" class="btn btn-primary" id="printDocBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          Print ID &amp; Summary
+        </button>
+      </div>
+    </div>
+
+    <!-- Empty State Warning (If user navigates before filling form) -->
+    <div id="noDataContainer" class="empty-state" style="display: none;">
+      <div class="empty-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+      </div>
+      <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">No Student Record Found</h2>
+      <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto 1.5rem;">
+        You haven't submitted the student admission form yet. Please fill out the form or load sample preview data to inspect this page.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="index.html" class="btn btn-primary">Go to Admission Form</a>
+        <button type="button" class="btn btn-demo" id="loadDemoProfileBtn">Load Demo Student Data</button>
+      </div>
+    </div>
+
+    <!-- Profile Content Section -->
+    <div id="profileContainer" class="profile-layout">
+
+      <!-- LEFT: Official Digital Student ID Card -->
+      <aside class="id-card-wrapper">
+        <div class="id-card" id="studentIdCard">
+
+          <div class="id-card-header">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2.2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+              <span class="id-school-name">Apex Institute</span>
+            </div>
+            <div class="id-chip"></div>
+          </div>
+
+          <div class="id-card-body">
+            <div class="id-photo-container">
+              <img id="cardPhoto" class="id-photo" alt="Student Photo" src="">
+            </div>
+
+            <div class="id-student-name" id="cardName">Alex Morgan</div>
+            <div class="id-student-roll" id="cardRoll">AIT-2026-8941</div>
+
+            <div class="id-meta-grid">
+              <div class="id-meta-item">
+                <span>Program</span>
+                <strong id="cardCourse">B.Tech Computer Science</strong>
+              </div>
+              <div class="id-meta-item">
+                <span>Blood Group</span>
+                <strong id="cardBlood">O+</strong>
+              </div>
+              <div class="id-meta-item">
+                <span>Valid Thru</span>
+                <strong>2026 - 2030</strong>
+              </div>
+              <div class="id-meta-item">
+                <span>Emergency</span>
+                <strong id="cardEmergency">+1 (555) 999-8877</strong>
+              </div>
+            </div>
+
+            <div class="id-card-footer">
+              <div class="id-barcode">
+                <div class="barcode-lines">
+                  <span class="b-bar" style="width: 2px;"></span>
+                  <span class="b-bar" style="width: 4px;"></span>
+                  <span class="b-bar" style="width: 1px;"></span>
+                  <span class="b-bar" style="width: 3px;"></span>
+                  <span class="b-bar" style="width: 1px;"></span>
+                  <span class="b-bar" style="width: 5px;"></span>
+                  <span class="b-bar" style="width: 2px;"></span>
+                  <span class="b-bar" style="width: 3px;"></span>
+                  <span class="b-bar" style="width: 1px;"></span>
+                  <span class="b-bar" style="width: 4px;"></span>
+                  <span class="b-bar" style="width: 2px;"></span>
+                  <span class="b-bar" style="width: 3px;"></span>
+                  <span class="b-bar" style="width: 1px;"></span>
+                  <span class="b-bar" style="width: 4px;"></span>
+                </div>
+                <span class="barcode-text" id="cardBarcodeText">AIT20268941</span>
+              </div>
+
+              <div class="id-validity">
+                STATUS
+                <strong>AUTHORIZED</strong>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- RIGHT: Comprehensive Application Summary -->
+      <section class="summary-card">
+
+        <div class="summary-header">
+          <div>
+            <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.05em;">Application Summary</span>
+            <h2 style="font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em;">Enrollment Dossier</h2>
+          </div>
+          <span class="status-badge verified">Verified &bull; Active</span>
+        </div>
+
+        <!-- Section A: Personal Information -->
+        <div class="details-section">
+          <div class="details-title">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Personal Information
+          </div>
+          <div class="details-grid">
+            <div class="detail-item">
+              <span class="detail-label">Full Name</span>
+              <span class="detail-value" id="summaryFullName">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Date of Birth</span>
+              <span class="detail-value" id="summaryDob">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Gender</span>
+              <span class="detail-value" id="summaryGender">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Blood Group</span>
+              <span class="detail-value" id="summaryBloodGroup">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section B: Contact & Guardian -->
+        <div class="details-section">
+          <div class="details-title">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            Contact &amp; Guardian Information
+          </div>
+          <div class="details-grid">
+            <div class="detail-item">
+              <span class="detail-label">Student Email</span>
+              <span class="detail-value" id="summaryEmail">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Mobile Number</span>
+              <span class="detail-value" id="summaryPhone">-</span>
+            </div>
+            <div class="detail-item col-span-2">
+              <span class="detail-label">Residential Address</span>
+              <span class="detail-value" id="summaryAddress">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Parent / Guardian</span>
+              <span class="detail-value" id="summaryGuardianName">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Emergency Contact Phone</span>
+              <span class="detail-value" id="summaryGuardianPhone">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section C: Academic & Course Details -->
+        <div class="details-section">
+          <div class="details-title">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            Academic &amp; Enrollment Details
+          </div>
+          <div class="details-grid">
+            <div class="detail-item">
+              <span class="detail-label">Enrolled Program</span>
+              <span class="detail-value" id="summaryCourse" style="color: var(--primary);">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Academic Batch</span>
+              <span class="detail-value" id="summaryBatch">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Previous Institution</span>
+              <span class="detail-value" id="summaryPreviousSchool">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Previous Score / GPA</span>
+              <span class="detail-value" id="summaryPreviousScore">-</span>
+            </div>
+            <div class="detail-item col-span-2">
+              <span class="detail-label">Selected Extracurriculars</span>
+              <div id="summaryActivities" style="margin-top: 0.35rem;">
+                <span class="badge-tag">None Specified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Official Footer Stamp -->
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <strong>Submission Date:</strong> <span id="summarySubmissionDate">-</span>
+          </div>
+          <div style="font-style: italic;">
+            Digitally certified by Apex Admissions Registrar
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toastNotification" class="toast-notice" role="alert" aria-live="polite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastMessage">Copied!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Apex Institute of Technology &bull; Student Admissions Administration Office &bull; Built with HTML, CSS &amp; JavaScript</p>
+  </footer>
+
+  <script src="profile.js"></script>
+</body>
+</html>

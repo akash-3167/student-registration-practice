@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official Student Admission and Registration Portal. Submit student information, personal details, academics, and generate your digital Student ID Card.">
+  <title>Student Admission Form | Student Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand" id="brandLogo">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">Apex Institute of Technology</div>
+          <div class="brand-subtitle">Student Admission &amp; Enrollment Portal</div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active" id="navFormLink">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          Admission Form
+        </a>
+        <a href="student-profile.html" class="nav-link" id="navProfileLink">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+            <circle cx="9" cy="10" r="2"></circle>
+            <line x1="15" y1="8" x2="17" y2="8"></line>
+            <line x1="15" y1="12" x2="17" y2="12"></line>
+            <line x1="7" y1="16" x2="17" y2="16"></line>
+          </svg>
+          Student ID &amp; Profile
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- Page Header & Steps -->
+    <section class="page-header">
+      <span class="header-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+          <circle cx="12" cy="12" r="10"></circle>
+        </svg>
+        Academic Year 2026 - 2027
+      </span>
+      <h1 class="page-title">New Student Admission Form</h1>
+      <p class="page-description">
+        Please complete all mandatory sections with accurate details. Once submitted, your student record and official Digital ID Card will be generated instantly.
+      </p>
+    </section>
+
+    <!-- Progress Steps -->
+    <div class="steps-container" aria-label="Registration Progress">
+      <div class="step-item active">
+        <div class="step-number">1</div>
+        <span>Fill Application</span>
+      </div>
+      <div class="step-divider"></div>
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <span>ID Card &amp; Confirmation</span>
+      </div>
+    </div>
+
+    <!-- Student Form Card -->
+    <div class="form-card">
+      <form id="studentRegistrationForm" novalidate>
+
+        <!-- SECTION 1: Personal Information -->
+        <div class="form-section">
+          <div class="section-title-wrap">
+            <div class="section-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h2 class="section-title">1. Personal Information</h2>
+            <span class="section-desc">* Indicates required field</span>
+          </div>
+
+          <!-- Photo Upload Preview Box -->
+          <div class="photo-upload-zone" style="margin-bottom: 1.5rem;">
+            <div class="avatar-preview-box" id="avatarPreviewBox">
+              <img id="avatarImage" class="avatar-preview-img" alt="Student Preview">
+              <div id="avatarPlaceholder" class="avatar-placeholder">
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+            </div>
+            <div class="photo-info">
+              <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-main);">Student Passport Photo</div>
+              <div class="input-helper">Upload a clear passport-style picture (PNG, JPG, max 2MB). Optional — default avatar will be created if skipped.</div>
+              <div class="file-input-wrapper">
+                <label for="studentPhotoInput" class="btn-file-select" id="uploadPhotoBtn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
+                  Choose Photo
+                </label>
+                <button type="button" class="btn-outline-danger" id="removePhotoBtn" style="display: none; padding: 0.35rem 0.75rem;">
+                  Remove
+                </button>
+                <input type="file" id="studentPhotoInput" class="hidden-file-input" accept="image/png, image/jpeg, image/webp">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <!-- First Name -->
+            <div class="form-group">
+              <label for="firstName" class="form-label">
+                First Name <span class="required-dot">*</span>
+              </label>
+              <input type="text" id="firstName" name="firstName" class="form-control" placeholder="e.g. Alex" required minlength="2" autocomplete="given-name">
+              <span class="input-feedback">Please enter a valid first name (at least 2 letters).</span>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+              <label for="lastName" class="form-label">
+                Last Name <span class="required-dot">*</span>
+              </label>
+              <input type="text" id="lastName" name="lastName" class="form-control" placeholder="e.g. Morgan" required minlength="2" autocomplete="family-name">
+              <span class="input-feedback">Please enter a valid last name.</span>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+              <label for="dob" class="form-label">
+                Date of Birth <span class="required-dot">*</span>
+              </label>
+              <input type="date" id="dob" name="dob" class="form-control" required max="2012-12-31" min="1980-01-01">
+              <span class="input-feedback">Please select a valid date of birth.</span>
+            </div>
+
+            <!-- Blood Group -->
+            <div class="form-group">
+              <label for="bloodGroup" class="form-label">Blood Group</label>
+              <select id="bloodGroup" name="bloodGroup" class="form-control">
+                <option value="">Select Blood Group (Optional)</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+              </select>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group col-span-2">
+              <label class="form-label">
+                Gender <span class="required-dot">*</span>
+              </label>
+              <div class="radio-group" id="genderGroup">
+                <label class="pill-option">
+                  <input type="radio" name="gender" value="Male" required>
+                  <span class="pill-label">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="14" r="5"/><line x1="19" y1="5" x2="13.6" y2="10.4"/><polyline points="15 5 19 5 19 9"/></svg>
+                    Male
+                  </span>
+                </label>
+                <label class="pill-option">
+                  <input type="radio" name="gender" value="Female">
+                  <span class="pill-label">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="5"/><line x1="12" y1="14" x2="12" y2="21"/><line x1="9" y1="18" x2="15" y2="18"/></svg>
+                    Female
+                  </span>
+                </label>
+                <label class="pill-option">
+                  <input type="radio" name="gender" value="Other">
+                  <span class="pill-label">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+                    Other / Prefer not to say
+                  </span>
+                </label>
+              </div>
+              <span class="input-feedback" id="genderFeedback">Please select your gender.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Contact & Guardian Details -->
+        <div class="form-section">
+          <div class="section-title-wrap">
+            <div class="section-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <h2 class="section-title">2. Contact &amp; Address Details</h2>
+          </div>
+
+          <div class="form-grid">
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email" class="form-label">
+                Email Address <span class="required-dot">*</span>
+              </label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="student@example.com" required autocomplete="email" inputmode="email">
+              <span class="input-feedback">Please enter a valid email address.</span>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+              <label for="phone" class="form-label">
+                Mobile Number <span class="required-dot">*</span>
+              </label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (555) 000-0000" required pattern="[0-9+\s\-()]{7,18}" autocomplete="tel" inputmode="tel">
+              <span class="input-feedback">Please enter a valid phone number.</span>
+            </div>
+
+            <!-- Residential Address -->
+            <div class="form-group col-span-2">
+              <label for="address" class="form-label">
+                Street Address <span class="required-dot">*</span>
+              </label>
+              <input type="text" id="address" name="address" class="form-control" placeholder="124 University Avenue, Suite 4B" required autocomplete="street-address">
+              <span class="input-feedback">Please enter your address.</span>
+            </div>
+
+            <!-- City -->
+            <div class="form-group">
+              <label for="city" class="form-label">
+                City <span class="required-dot">*</span>
+              </label>
+              <input type="text" id="city" name="city" class="form-control" placeholder="e.g. San Francisco" required autocomplete="address-level2">
+              <span class="input-feedback">Please enter city.</span>
+            </div>
+
+            <!-- State -->
+            <div class="form-group">
+              <label for="state" class="form-label">
+                State / Province <span class="required-dot">*</span>
+              </label>
+              <input type="text" id="state" name="state" class="form-control" placeholder="e.g. California" required autocomplete="address-level1">
+              <span class="input-feedback">Please enter state.</span>
+            </div>
+
+            <!-- Postal Code -->
+            <div class="form-group">
+              <label for="zipCode" class="form-label">
+                Postal / ZIP Code <span class="required-dot">*</span>
+              </label>
+              <input type="text" id="zipCode" name="zipCode" class="form-control" placeholder="94107" required autocomplete="postal-code">
+              <span class="input-feedback">Please enter postal code.</span>
+            </div>
+
+            <!-- Parent / Guardian Name -->
+            <div class="form-group">
+              <label for="guardianName" class="form-label">
+                Parent / Guardian Name <span class="required-dot">*</span>
+              </label>
+              <input type="text" id="guardianName" name="guardianName" class="form-control" placeholder="e.g. Robert Morgan" required>
+              <span class="input-feedback">Please enter guardian name.</span>
+            </div>
+
+            <!-- Guardian Phone -->
+            <div class="form-group col-span-2">
+              <label for="guardianPhone" class="form-label">
+                Emergency Contact Number <span class="required-dot">*</span>
+              </label>
+              <input type="tel" id="guardianPhone" name="guardianPhone" class="form-control" placeholder="+1 (555) 999-8877" required pattern="[0-9+\s\-()]{7,18}">
+              <span class="input-feedback">Please enter guardian emergency contact number.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: Academic & Course Selection -->
+        <div class="form-section">
+          <div class="section-title-wrap">
+            <div class="section-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
+            <h2 class="section-title">3. Academic &amp; Course Enrollment</h2>
+          </div>
+
+          <div class="form-grid">
+            <!-- Program / Course -->
+            <div class="form-group">
+              <label for="course" class="form-label">
+                Degree Program / Course <span class="required-dot">*</span>
+              </label>
+              <select id="course" name="course" class="form-control" required>
+                <option value="">Select a Course</option>
+                <option value="B.Tech Computer Science &amp; Engineering">B.Tech Computer Science &amp; Engineering</option>
+                <option value="B.Tech Artificial Intelligence &amp; Data Science">B.Tech Artificial Intelligence &amp; Data Science</option>
+                <option value="B.Sc Information Technology">B.Sc Information Technology</option>
+                <option value="B.Tech Mechanical Engineering">B.Tech Mechanical Engineering</option>
+                <option value="BBA Business Administration">BBA Business Administration</option>
+                <option value="B.Des UI/UX &amp; Digital Design">B.Des UI/UX &amp; Digital Design</option>
+                <option value="M.Tech Software Systems">M.Tech Software Systems</option>
+              </select>
+              <span class="input-feedback">Please choose your intended course.</span>
+            </div>
+
+            <!-- Enrollment Batch -->
+            <div class="form-group">
+              <label for="academicBatch" class="form-label">
+                Batch / Semester <span class="required-dot">*</span>
+              </label>
+              <select id="academicBatch" name="academicBatch" class="form-control" required>
+                <option value="Fall 2026 (Semester 1)">Fall 2026 (Semester 1)</option>
+                <option value="Spring 2027 (Semester 2)">Spring 2027 (Semester 2)</option>
+                <option value="Summer 2026 (Accelerated)">Summer 2026 (Accelerated)</option>
+              </select>
+            </div>
+
+            <!-- Previous School / College -->
+            <div class="form-group">
+              <label for="previousSchool" class="form-label">
+                Previous School / College <span class="required-dot">*</span>
+              </label>
+              <input type="text" id="previousSchool" name="previousSchool" class="form-control" placeholder="e.g. St. Xavier Senior High School" required>
+              <span class="input-feedback">Please enter previous institution name.</span>
+            </div>
+
+            <!-- Previous Score / GPA -->
+            <div class="form-group">
+              <label for="previousScore" class="form-label">
+                Previous Score / GPA (%) <span class="required-dot">*</span>
+              </label>
+              <input type="number" id="previousScore" name="previousScore" class="form-control" placeholder="e.g. 88.5" min="30" max="100" step="0.1" required>
+              <span class="input-feedback">Please enter your score (30 - 100%).</span>
+            </div>
+
+            <!-- Extracurricular Activities -->
+            <div class="form-group col-span-2">
+              <label class="form-label">Extracurricular Activities &amp; Clubs</label>
+              <div class="checkbox-group" id="activitiesGroup">
+                <label class="pill-option">
+                  <input type="checkbox" name="activities" value="Coding &amp; Robotics Club">
+                  <span class="pill-label">💻 Coding &amp; AI</span>
+                </label>
+                <label class="pill-option">
+                  <input type="checkbox" name="activities" value="Sports &amp; Athletics">
+                  <span class="pill-label">⚽ Sports &amp; Athletics</span>
+                </label>
+                <label class="pill-option">
+                  <input type="checkbox" name="activities" value="Music &amp; Performing Arts">
+                  <span class="pill-label">🎵 Music &amp; Arts</span>
+                </label>
+                <label class="pill-option">
+                  <input type="checkbox" name="activities" value="Debating &amp; Model UN">
+                  <span class="pill-label">🎤 Debating &amp; MUN</span>
+                </label>
+                <label class="pill-option">
+                  <input type="checkbox" name="activities" value="Student Volunteer Forum">
+                  <span class="pill-label">🌱 Volunteer Forum</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: Declaration & Terms -->
+        <div class="form-section">
+          <div class="declaration-box">
+            <input type="checkbox" id="declaration" name="declaration" class="custom-checkbox" required>
+            <label for="declaration" class="declaration-text">
+              <strong>Applicant's Declaration:</strong> I hereby declare that all particulars stated in this application are true, correct, and complete to the best of my knowledge and belief. I agree to abide by the rules and academic regulations of the institution.
+            </label>
+          </div>
+          <span class="input-feedback" id="declarationFeedback">You must accept the declaration to submit.</span>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="form-actions">
+          <button type="button" class="btn btn-demo" id="fillDemoBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+            Fill Demo Data
+          </button>
+
+          <div class="actions-right">
+            <button type="reset" class="btn btn-secondary" id="resetBtn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+              </svg>
+              Reset
+            </button>
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              <span>Submit &amp; Generate ID Card</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toastNotification" class="toast-notice" role="alert" aria-live="polite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastMessage">Success</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Apex Institute of Technology &bull; Student Admissions Administration Office &bull; Built with HTML, CSS &amp; JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
